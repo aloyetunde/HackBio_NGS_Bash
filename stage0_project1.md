@@ -10,7 +10,7 @@ This document details the step-by-step bash commands used to complete the Projec
 echo "Alo Yetunde"
 
 ### 2. Create a folder titled your name
-mkdir -p "Alo Yetunde"
+mkdir -p "Alo_Yetunde"
 
 
 ### 3. Create another new directory titled `biocomputing` and change to that directory
@@ -24,14 +24,14 @@ wget https://raw.githubusercontent.com/josoga2/dataset-repos/main/wildtype.gbk -
 
 
 ### 5. Move the `.fna` file to the folder titled your name
-mv wildtype.fna ../"Alo Yetunde"
+mv wildtype.fna ../Alo_Yetunde/
 
 
 ### 6. Delete the duplicate `.gbk` file
 rm wildtype_dup.gbk
 
 ### 7. Confirm if the `.fna` file is mutant or wild type (tatatata vs tata)
-cd ../"Alo Yetunde"
+cd ../Alo_Yetunde
 if grep -q "tatatata" wildtype.fna; then
     echo "Mutant"
 else
@@ -49,16 +49,16 @@ grep -v '^LOCUS' wildtype.gbk | wc -l
 
 
 ### 10. Print the sequence length of the `.gbk` file (Use the LOCUS tag in the first line)
-head -1 wildtype.gbk | awk '{print $3}'
+grep "^LOCUS" wildtype.gbk | awk '{print $3}'
 
 
 ### 11. Print the source organism of the `.gbk` file (Use the SOURCE tag)
 echo "Source organism:"
-grep "SOURCE" wildtype.gbk | head -n 1
+grep "^SOURCE" wildtype.gbk | head -1 | awk '{$1=""; print $0}'
 
 
 ### 12. List all the gene names of the `.gbk` file
-echo "List of gene names:"
+echo "Gene names:"
 grep "/gene=" wildtype.gbk
 
 
@@ -69,8 +69,8 @@ history
 
 ### 14. List the files in the two folders
 cd ../
-echo "Files in 'Alo Yetunde':"
-ls -l "Alo Yetunde"
+echo "Files in 'Alo_Yetunde':"
+ls -l "Alo_Yetunde"
 echo "Files in 'biocomputing':"
 ls -l biocomputing
 
