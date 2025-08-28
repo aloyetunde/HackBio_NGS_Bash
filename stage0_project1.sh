@@ -5,7 +5,7 @@
 echo "Alo Yetunde"
 
 # 2. Create a folder titled your name
-mkdir -p "Alo_Yetunde"
+mkdir -p "Alo Yetunde"
 
 # 3. Create another new directory titled biocomputing and change to that directory
 mkdir -p biocomputing && cd biocomputing
@@ -16,13 +16,13 @@ wget https://raw.githubusercontent.com/josoga2/dataset-repos/main/wildtype.gbk
 wget https://raw.githubusercontent.com/josoga2/dataset-repos/main/wildtype.gbk -O wildtype_dup.gbk
 
 # 5. Move the .fna file to the folder titled your name
-mv wildtype.fna ../Alo_Yetunde/
+mv wildtype.fna ../"Alo Yetunde"/
 
 # 6. Delete the duplicate gbk file
 rm wildtype_dup.gbk
 
 # 7. Confirm if the .fna file is mutant or wild type (tatatata vs tata)
-cd ../Alo_Yetunde
+cd ../"Alo Yetunde"
 if grep -q "tatatata" wildtype.fna; then
     echo "Mutant"
     # 8. If mutant, print all matching lines into a new file
@@ -55,7 +55,7 @@ cat commands_used.txt
 
 # 14. List the files in the two folders
 cd ..
-echo "Files in Alo_Yetunde folder:"
-ls -l "Alo_Yetunde"
+echo "Files in Alo Yetunde folder:"
+ls -l "Alo Yetunde"
 echo "Files in biocomputing folder:"
 ls -l biocomputing
