@@ -49,9 +49,8 @@ echo "Gene names:"
 grep "/gene=" wildtype.gbk
 
 # 13. Clear your terminal space and print all commands used today
-history > commands_used.txt
 clear
-cat commands_used.txt
+history
 
 # 14. List the files in the two folders
 cd ..
