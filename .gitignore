@@ -1,0 +1,21 @@
+# Ignore raw data
+raw/
+*.fastq.gz
+*.fq.gz
+
+# Ignore BAM and SAM
+*.bam
+*.sam
+*.bai
+
+# Ignore large result folders
+qc/
+trim/
+assemblies/
+abricate/
+blast/
+
+# Ignore temporary or log files
+*.log
+*.tmp
+*.out
