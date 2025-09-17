@@ -51,15 +51,50 @@ fastp -i sample_R1.fastq.gz -I sample_R2.fastq.gz \
 ```
 
 ### 4️⃣ Genome assembly
-```bash
-spades.py -1 sample_R1_trimmed.fastq.gz -2 sample_R2_trimmed.fastq.gz \
-          -o assembly_output
-
-```
 
 ### 5️⃣ Assembly assessment
 ```bash
-quast.py assembly_output/contigs.fasta -o quast_results/
+#!/bin/bash
+# summarize_amr.sh
+# Script to clean abricate AMR summary and compute prevalence
+
+set -euo pipefail
+
+# go to abricate report dir
+cd report/abricate || { echo "abricate report directory not found"; exit 1; }
+
+# Step 1: clean and convert summary into CSV
+awk 'NR==1{gsub(/\t/," "); gsub(/  +/," "); print; next} {gsub(/\t/," "); gsub(/  +/," "); print}' AMR_summary_CARD.txt > AMR_summary_CARD.cleaned.txt
+sed 's/ \+/,/g' AMR_summary_CARD.cleaned.txt > AMR_summary_CARD.csv
+
+# Step 2: run python inline to compute prevalence
+python3 - <<'PY'
+import csv
+from collections import Counter
+rows=[]
+with open('AMR_summary_CARD.csv') as f:
+    rdr=csv.reader(f)
+    header=next(rdr)
+    genes = header[2:]
+    for r in rdr:
+        if not r: continue
+        # pad if missing
+        r += ["0"]*(len(header)-len(r))
+        rows.append(r)
+counts = Counter()
+for r in rows:
+    for i,g in enumerate(genes, start=2):
+        try:
+            if float(r[i]) > 0:
+                counts[g] += 1
+        except Exception:
+            pass
+print("Gene,Count,Prevalence_percent")
+n = len(rows)
+for g in genes:
+    c = counts[g]
+    print(f"{g},{c},{(c/n*100):.1f}")
+PY
 
 ```
 ### 6️⃣ Confirm organism Identity (BLAST)
