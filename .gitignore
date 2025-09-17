@@ -19,3 +19,4 @@ blast/
 *.log
 *.tmp
 *.out
+assembly/*/tmp/
