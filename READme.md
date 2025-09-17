@@ -11,7 +11,6 @@ We expect a code report submitted as a markdown — a mix of commands, results, 
 🛠️ ## Workflow Overview
 
 We divided the project into stages:
-
 Stage 0: Dataset download & setup
 
 Stage 1: Quality Control & Read Trimming
