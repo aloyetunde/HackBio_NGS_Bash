@@ -1,0 +1,31 @@
+---
+max read length: 301
+nomerge max read length: 301
+average read length: 224.859
+average coverage: 57.4657
+libraries:       
+    - type:            paired-end
+      orientation:     fr
+      left reads:      
+        - /home/teameinstein/Mary/SA_Polony_project/assembly/SRR27013310/corrected/SRR27013310_1.trimmed.fastq.00.0_0.cor.fastq.gz
+      right reads:     
+        - /home/teameinstein/Mary/SA_Polony_project/assembly/SRR27013310/corrected/SRR27013310_2.trimmed.fastq.00.0_0.cor.fastq.gz
+      single reads:    
+        - /home/teameinstein/Mary/SA_Polony_project/assembly/SRR27013310/corrected/SRR27013310__unpaired.00.0_0.cor.fastq.gz
+      data:            
+        unmerged read length: 301
+        merged read length: 0
+        insert size mean: 0
+        insert size deviation: 0
+        insert size left quantile: 0
+        insert size right quantile: 0
+        insert size median: 0
+        insert size mad: 0
+        insert size distribution: {  }
+        pi threshold:    0
+        binary converted: true
+        single reads mapped: false
+        library index:   0
+        number of reads: 1187814
+        total nucleotides: 267090917
+...

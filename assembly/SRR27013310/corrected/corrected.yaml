@@ -1,0 +1,8 @@
+- "left reads":
+  - "/home/teameinstein/Mary/SA_Polony_project/assembly/SRR27013310/corrected/SRR27013310_1.trimmed.fastq.00.0_0.cor.fastq.gz"
+  "orientation": "fr"
+  "right reads":
+  - "/home/teameinstein/Mary/SA_Polony_project/assembly/SRR27013310/corrected/SRR27013310_2.trimmed.fastq.00.0_0.cor.fastq.gz"
+  "single reads":
+  - "/home/teameinstein/Mary/SA_Polony_project/assembly/SRR27013310/corrected/SRR27013310__unpaired.00.0_0.cor.fastq.gz"
+  "type": "paired-end"

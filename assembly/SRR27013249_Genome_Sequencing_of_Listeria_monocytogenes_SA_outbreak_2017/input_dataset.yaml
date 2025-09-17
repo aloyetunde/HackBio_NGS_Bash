@@ -1,0 +1,6 @@
+- "left reads":
+  - "/home/teameinstein/Mary/SA_Polony_project/trimmed/SRR27013249_Genome_Sequencing_of_Listeria_monocytogenes_SA_outbreak_2017_1.trimmed.fastq.gz"
+  "orientation": "fr"
+  "right reads":
+  - "/home/teameinstein/Mary/SA_Polony_project/trimmed/SRR27013249_Genome_Sequencing_of_Listeria_monocytogenes_SA_outbreak_2017_2.trimmed.fastq.gz"
+  "type": "paired-end"

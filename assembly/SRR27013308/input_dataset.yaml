@@ -1,0 +1,6 @@
+- "left reads":
+  - "/home/teameinstein/Mary/SA_Polony_project/trimmed/SRR27013308_1.trimmed.fastq.gz"
+  "orientation": "fr"
+  "right reads":
+  - "/home/teameinstein/Mary/SA_Polony_project/trimmed/SRR27013308_2.trimmed.fastq.gz"
+  "type": "paired-end"
