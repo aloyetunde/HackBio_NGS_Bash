@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =========================================================
-# RNA-Seq Quality Control Script (C. elegans data)
+# This script is used to perform quality control for our RNA-seq data for C. elegans
 # =========================================================
 
 # Step 1: Create output directory
