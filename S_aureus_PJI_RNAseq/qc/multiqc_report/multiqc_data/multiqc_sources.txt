@@ -1,0 +1,15 @@
+Module	Section	Sample Name	Source
+FastQC	all_sections	fm_1_R1	/home/teameinstein/Mary/HackBio_NGS_Bash/S_aureus_PJI_RNAseq/qc/fm_1_R1_fastqc.zip
+FastQC	all_sections	fm_1_R2	/home/teameinstein/Mary/HackBio_NGS_Bash/S_aureus_PJI_RNAseq/qc/fm_1_R2_fastqc.zip
+FastQC	all_sections	fm_2_R1	/home/teameinstein/Mary/HackBio_NGS_Bash/S_aureus_PJI_RNAseq/qc/fm_2_R1_fastqc.zip
+FastQC	all_sections	fm_2_R2	/home/teameinstein/Mary/HackBio_NGS_Bash/S_aureus_PJI_RNAseq/qc/fm_2_R2_fastqc.zip
+FastQC	all_sections	fm_3_R1	/home/teameinstein/Mary/HackBio_NGS_Bash/S_aureus_PJI_RNAseq/qc/fm_3_R1_fastqc.zip
+FastQC	all_sections	fm_3_R2	/home/teameinstein/Mary/HackBio_NGS_Bash/S_aureus_PJI_RNAseq/qc/fm_3_R2_fastqc.zip
+FastQC	all_sections	fm_4_R1	/home/teameinstein/Mary/HackBio_NGS_Bash/S_aureus_PJI_RNAseq/qc/fm_4_R1_fastqc.zip
+FastQC	all_sections	fm_4_R2	/home/teameinstein/Mary/HackBio_NGS_Bash/S_aureus_PJI_RNAseq/qc/fm_4_R2_fastqc.zip
+FastQC	all_sections	m_1_R1	/home/teameinstein/Mary/HackBio_NGS_Bash/S_aureus_PJI_RNAseq/qc/m_1_R1_fastqc.zip
+FastQC	all_sections	m_1_R2	/home/teameinstein/Mary/HackBio_NGS_Bash/S_aureus_PJI_RNAseq/qc/m_1_R2_fastqc.zip
+FastQC	all_sections	m_2_R1	/home/teameinstein/Mary/HackBio_NGS_Bash/S_aureus_PJI_RNAseq/qc/m_2_R1_fastqc.zip
+FastQC	all_sections	m_2_R2	/home/teameinstein/Mary/HackBio_NGS_Bash/S_aureus_PJI_RNAseq/qc/m_2_R2_fastqc.zip
+FastQC	all_sections	m_3_R1	/home/teameinstein/Mary/HackBio_NGS_Bash/S_aureus_PJI_RNAseq/qc/m_3_R1_fastqc.zip
+FastQC	all_sections	m_3_R2	/home/teameinstein/Mary/HackBio_NGS_Bash/S_aureus_PJI_RNAseq/qc/m_3_R2_fastqc.zip
