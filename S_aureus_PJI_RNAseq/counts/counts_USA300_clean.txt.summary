@@ -1,0 +1,15 @@
+Status	mapped_reads/fm_1.bam	mapped_reads/fm_2.bam	mapped_reads/fm_3.bam	mapped_reads/fm_4.bam	mapped_reads/m_1.bam	mapped_reads/m_2.bam	mapped_reads/m_3.bam
+Assigned	2751463	458211	833487	1781723	1555440	951573	2661887
+Unassigned_Unmapped	464668	266124	761847	297739	219707	183751	542746
+Unassigned_Read_Type	0	0	0	0	0	0	0
+Unassigned_Singleton	0	0	0	0	0	0	0
+Unassigned_MappingQuality	0	0	0	0	0	0	0
+Unassigned_Chimera	0	0	0	0	0	0	0
+Unassigned_FragmentLength	0	0	0	0	0	0	0
+Unassigned_Duplicate	0	0	0	0	0	0	0
+Unassigned_MultiMapping	0	0	0	0	0	0	0
+Unassigned_Secondary	0	0	0	0	0	0	0
+Unassigned_NonSplit	0	0	0	0	0	0	0
+Unassigned_NoFeatures	18805808	13815821	21707457	12503590	12223502	13993042	11671442
+Unassigned_Overlapping_Length	0	0	0	0	0	0	0
+Unassigned_Ambiguity	0	0	0	0	0	0	0

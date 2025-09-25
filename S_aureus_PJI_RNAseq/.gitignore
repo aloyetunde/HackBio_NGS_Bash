@@ -1,0 +1,14 @@
+# Ignore raw and big files
+raw_sra/
+clean_fastq/
+trim/*_trim.fastq.gz
+mapped_reads/
+genome/*.sa
+genome/*.ann
+genome_index/
+*.bam
+*.bai
+
+# Optional system files
+.DS_Store
+*.log
