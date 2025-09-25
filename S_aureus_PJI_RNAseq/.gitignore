@@ -1,11 +1,25 @@
-# raw + big files
-raw_sra/
-clean_fastq/
-trim/*_trim.fastq.gz
-mapped_reads/
-genome/*.sa
-genome/*.ann
-genome_index/
+cat > .gitignore << 'EOF'
+# Ignore large genome and index files
+genome/
+genomeIndex/
+*.fa
+*.fasta
+*.fai
+*.gff3
+*.gtf
+
+# Ignore alignment files
 *.bam
+*.sam
 *.bai
 
+# Ignore QC outputs
+qc/
+*.html
+*.zip
+
+# Ignore temp and backup files
+*.bak
+*.backup
+tmp_*
+EOF
