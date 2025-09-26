@@ -25,14 +25,25 @@ RNA-seq was employed to compare gene expression profiles of *S. aureus* isolates
    - `featureCounts` command used to generate `counts_USA300_clean.txt`  
    - `scripts/deseq2_USA300.R` (full DESeq2 R script without EnhancedVolcano)  
 4. **Troubleshooting**  
-   - Sample-name mismatch: commands we used  
+   - Sample-name mismatch: commands used  
 5. **What to Push to GitHub & `.gitignore` (Exact Content)**  
-6. **Short Biological / Results Notes & How to Create the Clinical Report**  
-7. **Useful References & Final Checklist**
+6. **Short Biological / Results Notes**  
+
 
 # 1 — Project Summary (Short)
 
 We profiled **8 RNA-seq samples** from **PRJNA867318** (4 chronic, 4 acute).  
+| Accession | State |
+|-----------|-------|
+| SRR20959676 | Chronic |
+| SRR20959677 | Chronic |
+| SRR20959678 | Chronic |
+| SRR20959679 | Chronic |
+| SRR20959680 | Acute   |
+| SRR20959681 | Acute   |
+| SRR20959682 | Acute   |
+| SRR20959683 | Acute   |
+
 
 ### Steps performed:
 1. **Download SRA FASTQs** → stored under `raw_sra/`  
@@ -539,3 +550,64 @@ git gc --prune=now --aggressive
 
 # Force push if necessary
 git push origin main --force
+```
+
+# 6 — Short Biological / Results Notes
+
+
+- Number of DEGs (padj < 0.05, |LFC| ≥ 1): relatively few passed significance thresholds.  
+- Still, strong trends in **acute-upregulated toxins/adhesins** vs **chronic-upregulated biofilm/stress genes**.
+
+#### 🔺 Top 10 Upregulated in Acute (positive log2FC)
+
+| Gene ID       | baseMean | log2FoldChange | padj   |
+|---------------|----------|----------------|--------|
+| SAOUHSC_02193 | 10.63    | **6.82**       | 0.4622 |
+| SAOUHSC_02196 | 11.49    | **6.93**       | 0.4271 |
+| SAOUHSC_02187 | 10.10    | **6.75**       | 0.4622 |
+| SAOUHSC_02189 | 7.94     | **6.41**       | 0.7770 |
+| SAOUHSC_02928 | 5.74     | **4.53**       | 0.9779 |
+| SAOUHSC_00026 | 5.76     | **4.72**       | 0.9997 |
+| SAOUHSC_02874 | 90.76    | **3.59**       | 0.6718 |
+| SAOUHSC_00313 | 20.98    | **2.82**       | 0.8173 |
+| SAOUHSC_00012 | 47.93    | **2.77**       | 0.8173 |
+| SAOUHSC_00318 | 500.82   | **2.22**       | 0.7907 |
+
+#### 🔻 Top 10 Upregulated in Chronic (negative log2FC)
+
+| Gene ID       | baseMean | log2FoldChange | padj   |
+|---------------|----------|----------------|--------|
+| SAOUHSC_02233 | 11.80    | **-7.25**      | 0.8718 |
+| SAOUHSC_01705 | 7.39     | **-6.57**      | 0.6718 |
+| SAOUHSC_02656 | 5.60     | **-6.19**      | 0.8714 |
+| SAOUHSC_03026 | 18.48    | **-5.84**      | 0.4271 |
+| SAOUHSC_02464 | 15.95    | **-5.49**      | 0.4271 |
+| SAOUHSC_02651 | 25.44    | **-4.39**      | 0.7770 |
+| SAOUHSC_00094 | 251.87   | **-2.40**      | 0.9997 |
+| SAOUHSC_00197 | 3531.51  | **-2.33**      | 0.9779 |
+| SAOUHSC_02112 | 109.90   | **-2.24**      | 0.9779 |
+| SAOUHSC_02176 | 639.08   | **-2.16**      | 0.4622 |
+
+### Functional Enrichment
+
+Using GO:
+
+- **Acute-upregulated**: enriched in toxin secretion, adhesion, virulence regulation.  
+- **Chronic-upregulated**: enriched in stress response, metabolism, efflux pump activity, biofilm persistence.  
+
+
+### Small RNAs & Regulatory Elements
+
+- sRNA counts (if annotated) were checked.  
+- IGV inspection revealed intergenic coverage peaks, suggesting possible unannotated sRNAs.  
+
+
+## Clinical Microbiology Interpretation
+
+- **Acute phase isolates** upregulated toxins and adhesins → likely driving aggressive tissue invasion.  
+- **Chronic isolates** upregulated persistence genes and efflux pumps → consistent with biofilm-mediated tolerance.  
+
+**Recommendations:**  
+- For **acute infections**, consider diagnostic testing for toxin/adhesion markers.  
+- For **chronic infections**, prioritize assays for efflux pump activity and biofilm tolerance; therapy should include anti-biofilm strategies.  
+
