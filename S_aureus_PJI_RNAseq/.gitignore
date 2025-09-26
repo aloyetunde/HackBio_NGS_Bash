@@ -17,6 +17,11 @@ genomeIndex/
 qc/
 *.html
 *.zip
+# Ignore big genome index files
+RNA_Seq/genome/genomeIndex/
+RNA_Seq/genome/*.fa
+RNA_Seq/counts/*.gff3
+
 
 # Ignore temp and backup files
 *.bak

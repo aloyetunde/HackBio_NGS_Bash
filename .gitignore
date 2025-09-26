@@ -1,22 +1,40 @@
-# Ignore raw data
-raw/
-*.fastq.gz
-*.fq.gz
+# ---- Ignore large genome and annotation files ----
+*.fa
+*.fasta
+*.fai
+*.gff
+*.gff3
+*.gtf
 
-# Ignore BAM and SAM
+# ---- Ignore genome index folders (STAR, BWA, etc.) ----
+genomeIndex/
+genome/
+
+# ---- Ignore raw reads and fastq ----
+*.fastq
+*.fastq.gz
+
+# ---- Ignore alignments and variants ----
 *.bam
 *.sam
 *.bai
+*.vcf
+*.bcf
 
-# Ignore large result folders
-qc/
-trim/
-assemblies/
-abricate/
-blast/
-
-# Ignore temporary or log files
+# ---- Ignore QC intermediate outputs ----
+*.html
+*.zip
+*.flagstat
 *.log
-*.tmp
 *.out
-assembly/*/tmp/
+*.err
+
+# ---- Ignore backup/temp files ----
+*~
+*.bak
+*.tmp
+tmp_*
+# Exclude large reference and index files
+RNA_Seq/genome/genomeIndex/
+RNA_Seq/genome/*.fa
+RNA_Seq/counts/*.gff3
