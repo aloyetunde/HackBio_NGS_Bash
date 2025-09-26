@@ -38,3 +38,12 @@ tmp_*
 RNA_Seq/genome/genomeIndex/
 RNA_Seq/genome/*.fa
 RNA_Seq/counts/*.gff3
+# Ignore heavy genome reference/index files
+RNA_Seq/genome/genomeIndex/
+RNA_Seq/genome/*.fa
+RNA_Seq/counts/*.gff3
+
+# Keep metadata and clean outputs
+!RNA_Seq/metadata.tsv
+!RNA_Seq/*_clean.txt
+!RNA_Seq/*_clean_summary.txt
