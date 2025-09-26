@@ -125,16 +125,16 @@ fastqc -o qc/fastqc raw_sra/*.fastq.gz
 # Aggregate with MultiQC
 multiqc qc/fastqc -o qc/
 ```
-###Run the script:
+### Run the script:
 ```bash
 chmod +x scripts/qc_script.sh
 ./scripts/qc_script.sh
 ```
 
+
 ### QC Outputs:
 
 qc/fastqc/*html`
-
 qc/multiqc_report.html`
 
 
