@@ -41,8 +41,9 @@ We profiled **8 RNA-seq samples** from **PRJNA867318** (4 chronic, 4 acute).
 
 # 2 — Files / Folders (What We Created)
 
-Typical content of project root:
+# Project Root Structure
 
+```text
 S_aureus_PJI_RNAseq/
 ├─ raw_sra/                      # downloaded SRA fastq.gz files (do NOT push)
 ├─ clean_fastq/                  # intermediate cleaned fastq (optional)
@@ -69,3 +70,71 @@ S_aureus_PJI_RNAseq/
 │   └─ DESeq2_results_USA300.csv
 ├─ metadata.tsv
 └─ S_aureus_PJI_RNAseq_REPORT.md  # this file
+```
+
+# 3 — Exact Commands & Scripts
+
+Below are the exact scripts & commands we used (copy/paste).  
+The scripts are intended to be placed in `scripts/` and made executable:
+
+```bash
+chmod +x scripts/*.sh
+```
+
+## 3.0 — Quick: Clone Repo / Change to Project Folder
+
+```bash
+# on my server 
+cd ~/Mary/HackBio_NGS_Bash
+
+git clone https://github.com/aloyetunde/HackBio_NGS_Bash.git
+
+cd S_aureus_PJI_RNAseq
+```
+## 3.1 — Download SRA in `raw_sra/`
+
+```bash
+# create folder
+mkdir -p raw_sra
+
+# Used SRA-Explorer generated direct URLs with wget
+wget -P raw_sra <link-to-SRR20959676_1.fastq.gz>
+wget -P raw_sra <link-to-SRR20959676_2.fastq.gz>
+```
+### `raw_sra/` Files
+
+SRR20959676_1.fastq.gz SRR20959678_2.fastq.gz SRR20959681_1.fastq.gz
+SRR20959676_2.fastq.gz SRR20959679_1.fastq.gz SRR20959681_2.fastq.gz
+SRR20959677_1.fastq.gz SRR20959679_2.fastq.gz SRR20959682_1.fastq.gz
+SRR20959677_2.fastq.gz SRR20959680_1.fastq.gz SRR20959682_2.fastq.gz
+SRR20959678_1.fastq.gz SRR20959680_2.fastq.gz
+
+## 3.2 — QC (FastQC + MultiQC) — `scripts/qc_script.sh`
+
+Create `scripts/qc_script.sh`:
+
+```bash
+#!/bin/bash
+set -euo pipefail
+
+mkdir -p qc/fastqc
+
+# Run FastQC for all raw fastq.gz files
+fastqc -o qc/fastqc raw_sra/*.fastq.gz
+
+# Aggregate with MultiQC
+multiqc qc/fastqc -o qc/
+```
+###Run the script:
+```bash
+chmod +x scripts/qc_script.sh
+./scripts/qc_script.sh
+```
+
+### QC Outputs:
+
+qc/fastqc/*html`
+
+qc/multiqc_report.html`
+
+
